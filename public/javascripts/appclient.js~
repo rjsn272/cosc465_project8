@@ -21,7 +21,7 @@ var myapp = (function(){
 			if (data.seq == 0) {
 				aveRTT = aveRTT/5;
 				console.log("Final aveRTT: ",aveRTT);
-				socket.emit('result', {finalRTT: aveRTT});
+				socket.emit('result',{finalRTT: aveRTT});
 				aveRTT = 0;
 			}
 

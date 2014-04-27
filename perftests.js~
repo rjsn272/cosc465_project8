@@ -9,6 +9,5 @@ exports.result = function(req) {
     var userdb = require('./userdb.js');
     var id = req.session.id;
     userdb.get_user_name(id,req.data.finalRTT);
-    console.log(userdb.userhash);
 };
 
