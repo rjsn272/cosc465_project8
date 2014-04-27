@@ -23,7 +23,7 @@ var myapp = (function(){
 				console.log("Final aveRTT: ",aveRTT);
 				socket.emit('result', {finalRTT: aveRTT});
 				aveRTT = 0;
-				location.reload();
+				//location.reload();
 			}
 
         });
