@@ -8,6 +8,6 @@ html
 
   body
     #header
-        p Hello, #{user}
+        p Hello, #{user}, #{latency_results[0]}
 
     block content

@@ -8,7 +8,9 @@ exports.result = function(req) {
     console.log("Got the average RTT");
     var userdb = require('./userdb.js');
     var id = req.session.id;
-    userdb.get_user_name(id,req.data.finalRTT);
-    console.log(userdb.userhash);
+    var username = userdb.get_user_name(id);
+    var latencyTest = userdb.add_latency(id,req.data.finalRTT);
+    console.log(username);
+    console.log(latencyTest);
 };
 

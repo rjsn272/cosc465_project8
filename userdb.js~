@@ -24,3 +24,22 @@ exports.get_user_name = function(id) {
     return userhash[id].user;
 };
 
+exports.add_latency = function(id,rtt) {
+    var user = userhash[id];
+    var idx = user.latency_results.length;
+    user.latency_results[idx] = rtt;
+    return user.latency_results;
+};
+
+exports.return_latency = function(id) {
+    var user = userhash[id];
+    if (userhash[id] === undefined) {
+        return "User Does Not Exist";
+    }
+    var idx = user.latency_results.length; 
+    if (idx == 0) {
+        return "Have not tested yet."
+    }
+    return user.latency_results[idx-1];
+}
+
