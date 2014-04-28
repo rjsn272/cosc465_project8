@@ -6,5 +6,4 @@ exports.index = function (req, res) {
 
 exports.tests = function (req, res) {
     var username = userdb.get_user_name(req.session.id);
-	var latencyRecent = userdb.return_latency(req.session.id);
-    res.render('tests', {title: "Speed tests", message: "Hello, world", user: username,latency_results: latencyRecent})};
+    res.render('tests', {title: "Speed tests", message: "Hello, world", user: username})};

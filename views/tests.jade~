@@ -9,7 +9,10 @@ block content
         a#startping(href="#") Latency test
         
         h3 Test Results
+
+        p Your Average RTT: 
+
+            a#stoptest
         
-        p Most Recent Result: #{latency_results}
 
     div#status

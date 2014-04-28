@@ -29,9 +29,7 @@ app.configure(function() {
 // set up socket.io routes
 var perftests = require('./perftests.js');
 app.io.route('ping', perftests.ping);
-
-var userdb = require('./userdb.js');
-app.io.route('results', userdb.results);
+app.io.route('result', perftests.result);
 
 // set up "normal" http routes
 var views = require('./views.js');

@@ -22,8 +22,8 @@ var myapp = (function(){
 				aveRTT = aveRTT/5;
 				console.log("Final aveRTT: ",aveRTT);
 				socket.emit('result', {finalRTT: aveRTT});
+				jQuery('#stoptest').html(aveRTT);
 				aveRTT = 0;
-				//location.reload();
 			}
 
         });
