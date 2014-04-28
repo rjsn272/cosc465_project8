@@ -10,9 +10,16 @@ block content
         
         h3 Test Results
 
-        p Your Average RTT: 
-
-            a#stoptest
+        #test1
+        p
+        a#test2
+        p
+        a#test3
+        p
+        a#test4
+        p
+        a#test5
+        p
+        a#finaltest
         
-
     div#status
