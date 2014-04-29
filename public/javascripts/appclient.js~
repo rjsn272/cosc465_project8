@@ -45,15 +45,10 @@ var myapp = (function(){
     	socket.emit('ping', {timestamp: Date.now(),seq: 5});
     };
 
-    var change_name = function(){
-
-    }
-
     return {
         init: function() {
             console.log("Client-side app starting up");
             jQuery("#startping").click(start_ping);
-            jQuery("#signin").click(change_name);
 			initPing();
         }
     }

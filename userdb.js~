@@ -16,10 +16,6 @@ var add_user = function(id, user) {
     return userhash[id];
 };
 
-var change_user = function(id,email) {
-    userhash[id].user = email;
-    return email;
-}
 exports.add_user = add_user;
 
 exports.get_user_name = function(id) {
@@ -35,5 +31,10 @@ exports.add_latency = function(id,rtt) {
     user.latency_results[idx] = rtt;
     return user.latency_results;
 };
+
+exports.change_user = function(id,email) {
+    userhash[id].user = email;
+    return email;
+}
 
 

@@ -29,7 +29,6 @@ exports.add_latency = function(id,rtt) {
     var user = userhash[id];
     var idx = user.latency_results.length;
     user.latency_results[idx] = rtt;
-    return user.latency_results;
 };
 
 exports.change_user = function(id,email) {

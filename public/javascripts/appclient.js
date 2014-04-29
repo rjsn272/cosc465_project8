@@ -26,12 +26,9 @@ var myapp = (function(){
 			}
 
 			aveRTT += rtt;
-			console.log(aveRTT);
-			console.log(data.seq);
 
 			if (data.seq == 0) {
 				aveRTT = aveRTT/5;
-				console.log("Final aveRTT: ",aveRTT);
 				socket.emit('result', {finalRTT: aveRTT});
 				displayLine = "Average RTT: " + aveRTT + " milliseconds"
 				jQuery('#finaltest').html(displayLine);

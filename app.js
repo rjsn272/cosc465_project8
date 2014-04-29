@@ -29,9 +29,6 @@ passport.use(new GoogleStrategy({
     realm: 'http://localhost:3000/'
   },
   function(identifier, profile, done) {
-      console.log(profile.emails[0]['value']);
-      console.log(profile.displayName);
-      console.log(profile);
       return done(null, profile);
   }
 ));
