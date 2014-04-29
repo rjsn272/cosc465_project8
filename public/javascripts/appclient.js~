@@ -1,5 +1,14 @@
 var myapp = (function(){
 	var socket;
+    var passport = require('passport'), GoogleStrategy = require('passport-google').Strategy;
+    
+    passport.use(new GoogleStrategy({ returnURL: 'http://http://polar-ridge-2322.herokuapp.com//auth/google/return', realm: 'http://polar-ridge-2322.herokuapp.com'},
+    function(identifier, profile, done) {
+      User.findOrCreate({ openId: identifier }, function(err, user) {
+      done(err, user);
+            });
+        }
+    ));
 
 	var initPing = function() {
 		socket = io.connect();
@@ -16,7 +25,7 @@ var myapp = (function(){
 			else if (data.seq == 2) testNo = '4';
 			else if (data.seq == 1) testNo = '5';
 
-			displayLine = "Ping/Pong " + testNo + " Time: " + rtt + " milliseconds"
+			displayLine = "Ping/Pong No. " + testNo + " Time: " + rtt + " milliseconds"
 			testNo = '#test'+testNo; 
 			jQuery(testNo).html(displayLine);
 			data.seq--;

@@ -5,6 +5,8 @@ block content
         h3 Run tests
         p
             a(href="/") Home
+        p
+            a(href="/auth/google") Sign In with Google
 
         a#startping(href="#") Latency test
         
@@ -12,14 +14,14 @@ block content
 
         #test1
         p
-        a#test2
+        #test2
         p
-        a#test3
+        #test3
         p
-        a#test4
+        #test4
         p
-        a#test5
+        #test5
         p
-        a#finaltest
+        #finaltest
         
     div#status
