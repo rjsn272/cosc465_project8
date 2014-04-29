@@ -13,8 +13,8 @@ if (process.env.PORT) {
 console.log("Using baseurl: " + baseurl);
 console.log("Port: " + port);
 
-var passport = require('./node_modules/passport');
-var GoogleStrategy = require('./node_modules/passport-google').Strategy;
+var passport = require('passport');
+var GoogleStrategy = require('passport-google').Strategy;
 
 passport.serializeUser(function(user,done) {
     done(null, user);
