@@ -13,6 +13,29 @@ if (process.env.PORT) {
 console.log("Using baseurl: " + baseurl);
 console.log("Port: " + port);
 
+var passport = require('./node_modules/passport');
+var GoogleStrategy = require('./node_modules/passport-google').Strategy;
+
+passport.serializeUser(function(user,done) {
+    done(null, user);
+});
+
+passport.deserializeUser(function(user,done) {
+    done(null, user);
+});
+
+passport.use(new GoogleStrategy({
+    returnURL: 'http://localhost:3000/auth/google/return',
+    realm: 'http://localhost:3000/'
+  },
+  function(identifier, profile, done) {
+      console.log(profile.emails[0]['value']);
+      console.log(profile.displayName);
+      console.log(profile);
+      return done(null, profile);
+  }
+));
+
 app.configure(function() {
   app.set('view engine', 'jade');
   app.set('views', __dirname + '/views');
@@ -22,6 +45,8 @@ app.configure(function() {
   app.use(express.urlencoded());
   app.use(express.methodOverride());
   app.use(express.session({secret: 'secretkeywhichmustnotbenamed'}));
+  app.use(passport.initialize());
+  app.use(passport.session());
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
 });
@@ -36,19 +61,6 @@ var views = require('./views.js');
 app.get('/', views.index);
 app.get('/tests', views.tests);
 
-var passport = require('./node_modules/passport')
-  , GoogleStrategy = require('./node_modules/passport-google').Strategy;
-
-passport.use(new GoogleStrategy({
-    returnURL: 'http://localhost:3000/auth/google/return',
-    realm: 'http://localhost:3000/'
-  },
-  function(identifier, profile, done) {
-    User.findOrCreate({ openId: identifier }, function(err, user) {
-      done(err, user);
-    });
-  }
-));
 // Redirect the user to Google for authentication.  When complete, Google
 // will redirect the user back to the application at
 //     /auth/google/return

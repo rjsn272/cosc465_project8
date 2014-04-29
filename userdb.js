@@ -15,6 +15,7 @@ var add_user = function(id, user) {
     }
     return userhash[id];
 };
+
 exports.add_user = add_user;
 
 exports.get_user_name = function(id) {
@@ -31,12 +32,9 @@ exports.add_latency = function(id,rtt) {
     return user.latency_results;
 };
 
-exports.return_latency = function(id) {
-    var user = userhash[id];
-    var idx = user.latency_results.length; 
-    if (idx == 0) {
-        return "Have not tested yet."
-    }
-    return user.latency_results[idx-1];
+exports.change_user = function(id,email) {
+    userhash[id].user = email;
+    return email;
 }
+
 

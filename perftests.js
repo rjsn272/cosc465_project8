@@ -6,6 +6,7 @@ exports.ping = function(req) {
 
 exports.result = function(req) {
     console.log("Got the average RTT");
+	var app = require('./app.js');
     var userdb = require('./userdb.js');
     var id = req.session.id;
     var latencyTest = userdb.add_latency(id,req.data.finalRTT);

@@ -1,14 +1,5 @@
 var myapp = (function(){
 	var socket;
-    var passport = require('passport'), GoogleStrategy = require('passport-google').Strategy;
-    
-    passport.use(new GoogleStrategy({ returnURL: 'http://http://polar-ridge-2322.herokuapp.com//auth/google/return', realm: 'http://polar-ridge-2322.herokuapp.com'},
-    function(identifier, profile, done) {
-      User.findOrCreate({ openId: identifier }, function(err, user) {
-      done(err, user);
-            });
-        }
-    ));
 
 	var initPing = function() {
 		socket = io.connect();
@@ -54,10 +45,15 @@ var myapp = (function(){
     	socket.emit('ping', {timestamp: Date.now(),seq: 5});
     };
 
+    var change_name = function(){
+
+    }
+
     return {
         init: function() {
             console.log("Client-side app starting up");
             jQuery("#startping").click(start_ping);
+            jQuery("#signin").click(change_name);
 			initPing();
         }
     }
