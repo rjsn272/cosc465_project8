@@ -2,24 +2,20 @@ extends layout
 
 block content
     div#testcontrol
-        h3 Run tests
-        p
-            a(href="/") Home
+        /*h3.littleheader Run Tests*/  
 
-        a#startping(href="#") Latency test
+    div.row
+        div.col-md-3.col-md-offset-4        
+                a(class="btn" href="/") Home
+        div.col-md-2
+                a#startping(class="btn" href="#") Run Tests
         
-        h3 Test Results
-
-        #test1
-        p
-        #test2
-        p
-        #test3
-        p
-        #test4
-        p
-        #test5
-        p
-        #finaltest
+        h3.header.pinkblock Test Results
+        #test1.pinkblock
+        #test2.pinkblock
+        #test3.pinkblock
+        #test4.pinkblock
+        #test5.pinkblock
+        #finaltest.pinkblock
         
     div#status

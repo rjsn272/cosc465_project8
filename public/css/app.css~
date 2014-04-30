@@ -76,7 +76,7 @@ btn:hover
 
 .pinkblock {
 
-	position: relative;
+	position: fixed;
 	display: block;
 
 	left: 450px;

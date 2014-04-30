@@ -6,9 +6,13 @@ html
     script(src='/javascripts/appclient.js')
     link(href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css", rel="stylesheet")
     link(href="/css/app.css", rel="stylesheet")
+    link(href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise' rel='stylesheet' type='text/css')
+
 
   body
     #header
-        p Hello, #{user}
+        p.user Hello, #{user}
+        h3.title cosc 465 network speed test (project 8)
 
     block content
