@@ -5,17 +5,17 @@ block content
         /*h3.littleheader Run Tests*/  
 
     div.row
-        div.col-md-4.col-md-offset-4        
+        div.col-md-1.col-md-offset-4        
                 a(class="btn" href="/") Home
-        div.col-md-2
+        div.col-md-1
                 a#startping(class="btn" href="#") Run Tests
         
         h3.header.pinkblock Test Results
-        #test1.pinkblock
-        #test2.pinkblock
-        #test3.pinkblock
-        #test4.pinkblock
-        #test5.pinkblock
-        #finaltest.pinkblock
+        #test1.pinkblock.test
+        #test2.pinkblock.test
+        #test3.pinkblock.test
+        #test4.pinkblock.test
+        #test5.pinkblock.test
+        #finaltest.pinkblock.test
         
     div#status

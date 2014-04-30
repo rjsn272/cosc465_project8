@@ -13,6 +13,6 @@ html
   body
     #header
         p.user Hello, #{user}
-        h3.title COSC 465 network speed test (project 8)
+        h3.title cosc 465 network speed test (project 8)
 
     block content
