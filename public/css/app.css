@@ -3,7 +3,7 @@ body {background-image:url("/css/background1.jpg");}
 .btn {
 
 	position:relative;
-	top:200px;
+	top:180px;
 
     	display: inline;
     	height: 80px;
@@ -59,6 +59,7 @@ btn:hover
 
 
 .header {
+
 	font-size: 30px;
 
 
@@ -66,6 +67,7 @@ btn:hover
 
 
 .test {
+	padding-top: 5px;
 	font-size: 24px;
 }
 
@@ -74,15 +76,19 @@ btn:hover
 	position: relative;
 	display: block;
 	font-family: 'Varela Round', sans-serif;
-	left: 350px;
+	left: 340px;
 	text-align: center;
-	top:290px;
+	top:240px;
 	color: #1ACE84;
 
     	height: 60px;
     	width: 550px;
     	background: #FFC3C2;
 	border: 4px solid  #1ACE84;
+}
+
+.results {
+	height: 250px;
 }
 
 
